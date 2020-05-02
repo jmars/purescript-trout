@@ -1,7 +1,13 @@
-{ name =
-    "trout"
+{ sources = [ "src/**/*.purs", "test/**/*.purs" ]
+, name = "trout"
 , dependencies =
-    [ "argonaut", "media-types", "prelude", "smolder", "spec", "spec-discovery", "uri" ]
-, packages =
-    ./packages.dhall
+  [ "argonaut"
+  , "media-types"
+  , "prelude"
+  , "smolder"
+  , "spec"
+  , "spec-discovery"
+  , "uri"
+  ]
+, packages = ./packages.dhall
 }
