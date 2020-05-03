@@ -2,12 +2,7 @@ module Type.Trout.Record (get, set, insert, delete) where
 
 import Data.Symbol (class IsSymbol, SProxy, reflectSymbol)
 import Prim.Row (class Cons)
-
-foreign import unsafeGet
-  :: forall r a
-   . String
-  -> Record r
-  -> a
+import Record.Unsafe (unsafeDelete, unsafeGet, unsafeSet)
 
 get
   :: forall r r' l a
@@ -17,13 +12,6 @@ get
   -> Record r
   -> a
 get l = unsafeGet (reflectSymbol l)
-
-foreign import unsafeSet
-  :: forall r1 r2 a
-   . String
-  -> a
-  -> Record r1
-  -> Record r2
 
 set
   :: forall r1 r2 r l a b
@@ -45,12 +33,6 @@ insert
   -> Record r1
   -> Record r2
 insert l = unsafeSet (reflectSymbol l)
-
-foreign import unsafeDelete
-  :: forall r1 r2
-   . String
-  -> Record r1
-  -> Record r2
 
 delete
   :: forall r1 r2 l a

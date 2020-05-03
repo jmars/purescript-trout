@@ -1,4 +1,4 @@
-{ sources = [ "src/**/*.purs", "test/**/*.purs" ]
+{ sources = [ "src/**/*.purs" ]
 , name = "trout"
 , repo = "https://github.com/jmars/purescript-trout.git"
 , version = "headers"
@@ -6,7 +6,6 @@
   [ "argonaut"
   , "media-types"
   , "prelude"
-  , "smolder"
   , "spec"
   , "spec-discovery"
   , "uri"
